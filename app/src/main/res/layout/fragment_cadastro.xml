@@ -24,6 +24,14 @@
         android:hint="Senha"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/input_confirmar_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirmar Senha"
+        android:inputType="textPassword"/>
+
+
     <Button
         android:id="@+id/botao_cadastrar"
         android:layout_width="match_parent"
