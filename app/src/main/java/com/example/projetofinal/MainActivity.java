@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.projetofinal.fragmentos.LoginFragment;
+import com.example.projetofinal.view.fragmentos.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
     @Override

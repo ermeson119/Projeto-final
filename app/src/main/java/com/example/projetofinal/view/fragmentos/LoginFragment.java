@@ -1,7 +1,8 @@
-package com.example.projetofinal.fragmentos;
+package com.example.projetofinal.view.fragmentos;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +37,9 @@ public class LoginFragment extends Fragment {
         botaoCadastrar = view.findViewById(R.id.botao_cadastrar);
         progressBar = view.findViewById(R.id.progressBar);
 
-        // Inicializa o banco diretamente sem usar threads
+
         db = Room.databaseBuilder(getActivity().getApplicationContext(), Database.class, "projeto_final.db")
-                .allowMainThreadQueries() // Permite rodar na UI Thread
+                .allowMainThreadQueries()
                 .build();
         usuarioDAO = db.usuarioDAO();
 
@@ -47,19 +48,16 @@ public class LoginFragment extends Fragment {
             String senha = input_senha.getText().toString().trim();
 
             if (email.isEmpty() || senha.isEmpty()) {
-                Toast.makeText(getActivity(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), " Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // Mostrar ProgressBar e desativar o botão
             progressBar.setVisibility(View.VISIBLE);
             botaoLogin.setEnabled(false);
 
-            // Simula um carregamento de login (poderia ser uma chamada à API)
-            new Handler().postDelayed(() -> {
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
                 Usuario usuario = usuarioDAO.autenticar(email, senha);
 
-                // Esconde o ProgressBar e reativa o botão após a verificação
                 progressBar.setVisibility(View.GONE);
                 botaoLogin.setEnabled(true);
 
@@ -69,7 +67,7 @@ public class LoginFragment extends Fragment {
                 } else {
                     Toast.makeText(getActivity(), "Credenciais inválidas!", Toast.LENGTH_SHORT).show();
                 }
-            }, 2000);
+            }, 3000);
         });
 
         botaoCadastrar.setOnClickListener(v -> {
