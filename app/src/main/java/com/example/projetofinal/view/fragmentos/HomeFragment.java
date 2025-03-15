@@ -34,8 +34,10 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragments_home, container, false);
 
+
+        //colocar no onViewCreate
         btnJogar = view.findViewById(R.id.buttonJogar);
 
         listViewLixo = view.findViewById(R.id.listViewLixo);
@@ -44,6 +46,7 @@ public class HomeFragment extends Fragment {
         listViewLixo.setOnItemClickListener(this::onItemClick);
 
         btnJogar.setOnClickListener(v -> abrirJogarPerguntaFragment());
+        //ate aqui
 
         return view;
     }
@@ -85,6 +88,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    //fazer na mainActivity
     private void abrirJogarPerguntaFragment() {
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, new JogarPerguntaFragment());

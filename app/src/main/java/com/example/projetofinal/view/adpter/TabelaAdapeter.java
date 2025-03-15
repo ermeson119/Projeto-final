@@ -15,21 +15,21 @@ import java.util.ArrayList;
 
 public class TabelaAdapeter extends BaseAdapter {
     private LayoutInflater inflater;
-    private ArrayList<Lixo> intensPriodica;
+    private ArrayList<Lixo> intensLixo;
 
-    public TabelaAdapeter(Context context, ArrayList<Lixo> intensPriodica) {
+    public TabelaAdapeter(Context context, ArrayList<Lixo> intensLixo) {
         inflater = LayoutInflater.from(context);
-        this.intensPriodica = intensPriodica;
+        this.intensLixo = intensLixo;
     }
 
     @Override
     public int getCount() {
-        return intensPriodica.size();
+        return intensLixo.size();
     }
 
     @Override
     public Lixo getItem(int position) {
-        return intensPriodica.get(position);
+        return intensLixo.get(position);
     }
 
     @Override

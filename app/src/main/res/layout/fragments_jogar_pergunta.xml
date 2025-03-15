@@ -3,14 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     android:gravity="center"
-    android:padding="16dp">
+    android:background="@color/azul">
 
     <TextView
-        android:id="@+id/mensagem_boas_vindas"
+        android:id="@+id/textViewCoracoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-vindo ao app!"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:text="@string/c"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/textViewPontuacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pontua_o_0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/perguntasLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finalizar_jogo"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>

@@ -16,6 +16,7 @@ import com.example.projetofinal.R;
 import com.example.projetofinal.model.conexao.Database;
 import com.example.projetofinal.model.dao.UsuarioDAO;
 import com.example.projetofinal.model.entity.Usuario;
+import com.example.projetofinal.view.fragmentos.LoginFragment;
 
 public class CadastroFragment extends Fragment {
     private EditText input_nome, input_email, input_senha, input_confirmar_senha;
@@ -25,7 +26,7 @@ public class CadastroFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
+        View view = inflater.inflate(R.layout.fragments_cadastro, container, false);
 
         input_nome = view.findViewById(R.id.input_nome);
         input_email = view.findViewById(R.id.input_email);
@@ -33,9 +34,8 @@ public class CadastroFragment extends Fragment {
         input_confirmar_senha = view.findViewById(R.id.input_confirmar_senha);
         botaoCadastrar = view.findViewById(R.id.botao_cadastrar);
 
-        // Inicializa o banco sem precisar de threads
         db = Room.databaseBuilder(getActivity().getApplicationContext(), Database.class, "projeto_final.db")
-                .allowMainThreadQueries() // Permite consultas na UI Thread
+                .allowMainThreadQueries()
                 .build();
         usuarioDAO = db.usuarioDAO();
 
@@ -55,10 +55,17 @@ public class CadastroFragment extends Fragment {
                 return;
             }
 
-            usuarioDAO.inserirUsuario(new Usuario(nome, email, senha));
+            Usuario usuarioExistente = usuarioDAO.buscarUsuarioPorEmail(email);
+            if (usuarioExistente != null) {
+                Toast.makeText(getActivity(), "Email já cadastrado!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Usuario novoUsuario = new Usuario(nome, email, senha);
+            usuarioDAO.inserirUsuario(novoUsuario);
+
             Toast.makeText(getActivity(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
 
-            // Troca de fragmento para a tela de Login
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, new LoginFragment());
             transaction.commit();

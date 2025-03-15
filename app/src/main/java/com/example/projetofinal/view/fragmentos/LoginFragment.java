@@ -29,14 +29,13 @@ public class LoginFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragments_login, container, false);
 
         input_email = view.findViewById(R.id.input_email);
         input_senha = view.findViewById(R.id.input_senha);
         botaoLogin = view.findViewById(R.id.botao_login);
         botaoCadastrar = view.findViewById(R.id.botao_cadastrar);
         progressBar = view.findViewById(R.id.progressBar);
-
 
         db = Room.databaseBuilder(getActivity().getApplicationContext(), Database.class, "projeto_final.db")
                 .allowMainThreadQueries()
@@ -48,7 +47,7 @@ public class LoginFragment extends Fragment {
             String senha = input_senha.getText().toString().trim();
 
             if (email.isEmpty() || senha.isEmpty()) {
-                Toast.makeText(getActivity(), " Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -63,12 +62,17 @@ public class LoginFragment extends Fragment {
 
                 if (usuario != null) {
                     Toast.makeText(getActivity(), "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
+
+                    usuarioDAO.deslogarTodosUsuarios();
+                    usuarioDAO.setUsuarioLogado(email);
+
                     abrirHomeFragment();
                 } else {
                     Toast.makeText(getActivity(), "Credenciais inválidas!", Toast.LENGTH_SHORT).show();
                 }
             }, 3000);
         });
+
 
         botaoCadastrar.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();

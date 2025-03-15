@@ -27,7 +27,9 @@ public class AlertDialogMetalFragments extends DialogFragment {
 
 
         Button buttonFechar = view.findViewById(R.id.buttonFechar);
-        Lixo lixo = new Lixo("Metal tal tal tal tal e importante");
+        Lixo lixo = new Lixo("As latinhas de alumínio são 100% recicláveis e podem voltar às prateleiras como novas em apenas 60 dias! Além disso, reciclar alumínio economiza " +
+                                        "até 95% de energia em comparação com a produção a partir da bauxita." +
+                                            " No Brasil, 98% das latinhas são recicladas, tornando o país líder mundial em reciclagem de alumínio!");
 
         textViewDescricao.setText(lixo.getDescricao());
 

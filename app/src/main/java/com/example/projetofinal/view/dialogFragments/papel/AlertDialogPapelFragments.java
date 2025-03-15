@@ -27,7 +27,8 @@ public class AlertDialogPapelFragments extends DialogFragment {
 
 
         Button buttonFechar = view.findViewById(R.id.buttonFechar);
-        Lixo lixo = new Lixo("Papel tal tal tal tal e importante");
+        Lixo lixo = new Lixo("Reciclar 1 tonelada de papel economiza cerca de 30 mil litros de água e 4.100 kWh de energia, o suficiente para abastecer " +
+                                        "uma casa por quase 6 meses! Além disso, cada tonelada reciclada salva 17 árvores de serem cortadas.");
 
         textViewDescricao.setText(lixo.getDescricao());
 

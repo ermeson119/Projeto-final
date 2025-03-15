@@ -1,3 +1,70 @@
 <resources>
     <string name="app_name">Projeto final</string>
+    <string name="JOGAR">JOGAR</string>
+    <string name="local_de_descartes_recicl_veis">Local de Descartes Recicláveis</string>
+    <string name="local_descarte_de_papel">Local: Descarte de Papel</string>
+    <string name="local_coleta_de_metais">Local: Coleta de Metais</string>
+    <string name="local_reciclagem_de_vidros">Local: Reciclagem de Vidros</string>
+    <string name="local_descarte_de_eletr_nicos">Local: Descarte de Eletrônicos</string>
+    <string name="local_reciclagem_de_pl_sticos">Local: Reciclagem de Plásticos</string>
+    <string name="op_o_4">Opção 4</string>
+    <string name="op_o_3">Opção 3</string>
+    <string name="op_o_2">Opção 2</string>
+    <string name="op_o_1">Opção 1</string>
+    <string name="qual_lixeira_correta_para_este_lixo">Qual lixeira correta para este lixo?</string>
+    <string name="descricao">Descricao</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="entrar">Entrar</string>
+    <string name="senha">Senha</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="finalizar_jogo">Finalizar Jogo</string>
+    <string name="pontua_o_0">Pontuação: 0</string>
+    <string name="c">❤ ❤ ❤</string>
+    <string name="hist_rico_de_pontua_o">Histórico de Pontuação</string>
+    <string name="ponto_do_usu_rio_logado">Ponto do usuário logado</string>
+    <string name="pontos">Pontos</string>
+    <string name="voltar_para_o_in_cio">Voltar para o início</string>
+    <string name="fechar">fechar</string>
+    <string name="voc_sabia">Você Sabia ? ♻️</string>
+
+
+    <!-- Perguntas para cada tipo de lixo -->
+    <string-array name="perguntas_plastico">
+        <item>Amarela</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Vermelha</item>
+    </string-array>
+
+    <string-array name="perguntas_papel">
+        <item>Azul</item>
+        <item>Verde</item>
+        <item>Amarela</item>
+        <item>Vermelha</item>
+    </string-array>
+
+    <string-array name="perguntas_vidro">
+        <item>Verde</item>
+        <item>Amarela</item>
+        <item>Azul</item>
+        <item>Vermelha</item>
+    </string-array>
+
+    <string-array name="perguntas_organico">
+        <item>Marrom</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Vermelha</item>
+    </string-array>
+
+    <string-array name="perguntas_metal">
+        <item>Vermelha</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Amarela</item>
+    </string-array>
+
+
 </resources>

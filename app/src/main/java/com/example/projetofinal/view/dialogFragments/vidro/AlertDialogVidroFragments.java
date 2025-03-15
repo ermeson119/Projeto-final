@@ -27,7 +27,9 @@ public class AlertDialogVidroFragments extends DialogFragment {
 
 
         Button buttonFechar = view.findViewById(R.id.buttonFechar);
-        Lixo lixo = new Lixo("Vidro tal tal tal tal e importante");
+        Lixo lixo = new Lixo("O vidro é infinitamente reciclável sem perder qualidade! Além disso, reciclar vidro economiza até 30% de energia em comparação com a produção de vidro novo." +
+                                        " Cada tonelada de vidro reciclado evita a emissão de 315 kg de CO₂ na atmosfera." +
+                                            " E o melhor: um vidro jogado na natureza pode levar até 4.000 anos para se decompor!");
 
         textViewDescricao.setText(lixo.getDescricao());
 

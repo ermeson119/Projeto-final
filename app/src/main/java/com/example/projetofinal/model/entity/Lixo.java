@@ -16,6 +16,7 @@ public class Lixo {
     }
 
     public int getImagemLixo() {
+
         return imagemLixo;
     }
 
@@ -24,10 +25,14 @@ public class Lixo {
     }
 
     public String getDescricao() {
+
         return descricao;
     }
 
     public void setDescricao(String descricao) {
+
         this.descricao = descricao;
     }
+
+    //https://toemfoco.com.br/natureza/palmas-conta-com-17-estacoes-de-coleta-seletiva-e-fma-orienta-sobre-o-descarte-correto-de-residuos/
 }

@@ -27,7 +27,8 @@ public class AlertDialogPlasticoFragments extends DialogFragment {
 
 
         Button buttonFechar = view.findViewById(R.id.buttonFechar);
-        Lixo lixo = new Lixo("Plastico tal tal tal tal e importante");
+        Lixo lixo = new Lixo("A reciclagem de plástico economiza até 88% de energia em comparação com a produção de plástico novo a partir de matérias-primas! " +
+                "Além disso, o plástico pode levar até 500 anos para se decompor no meio ambiente, tornando a reciclagem essencial para reduzir a poluição");
 
         textViewDescricao.setText(lixo.getDescricao());
 
